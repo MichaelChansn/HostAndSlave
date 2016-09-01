@@ -1,0 +1,30 @@
+package com.example.test;
+
+import android.content.Context;
+
+public class Utils {
+	
+	private static DisplayMetrics sDisplayMetrics;
+	public static int px2dip(Context context, float pxValue) {
+        // final float scale = context.getResources().getDisplayMetrics().density;
+        final float scale = getDensity(context);
+        return (int) (pxValue / scale);
+    }
+	
+	public static float getDensity(Context context) {
+        // 使用框的Context，防止插件调用接口时传入自己的Context
+        initDisplayMetrics(context);
+        return sDisplayMetrics.density;
+    }
+	
+	private static void initDisplayMetrics(Context context) {
+        if (null == sDisplayMetrics) {
+            Context appContext = SearchBox.getAppContext();
+            if (null == appContext) {
+                appContext = context;
+            }
+            sDisplayMetrics = appContext.getResources().getDisplayMetrics();
+        }
+    }
+
+}

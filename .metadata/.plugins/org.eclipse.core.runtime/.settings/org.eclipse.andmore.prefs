@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+org.eclipse.andmore.autoPickTarget=false
+org.eclipse.andmore.fixLegacyEditors=1
+org.eclipse.andmore.sdk=/Users/baidu/Library/Android/sdk
+org.eclipse.andmore.xmlEditor=true
